@@ -127,6 +127,7 @@ static void vLed2TaskC(void *pvParameters) {
 	TickType_t xLastWakeTime = xTaskGetTickCount();
 
 	while(1){
+			xPeriodicity = C1 / portTICK_RATE_MS;
 			Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED1[0], LED1[1], true);
 			vTaskDelay((C1/2) / portTICK_RATE_MS);
 			Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED1[0], LED1[1], false);
